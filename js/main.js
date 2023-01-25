@@ -561,9 +561,170 @@
 
 		}
 	};
+	//RegExp
 	
+		//var ime = document.getElementById('name').value;
+		//var provera = /^([A-Z])\w+/;
+		//if (!ime.match(provera))
+		//{
+		//	alert("Ime i prezime mora biti tipa Pera Peric");
+		//	return false;
+		//}
+		//else return true;
+		var ime = document.getElementById('imeIPrezime');
+		var proverImena = /\b[A-Z][a-z]* [A-Z][a-z]*( [A-Z])?\b/;
+		var greska = document.getElementById('imeGreska');
+		ime.addEventListener('input',function(e){
+			var trenutno = e.target.value;
+			var provera = proverImena.test(trenutno);
+			if(!provera) {
+				greska.style.display = 'block'
+			}
+			else{
+				greska.style.display = 'none'
+			}
+		}
+		)
+		var mail = document.getElementById('email');
+		var proverMaila = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var greska2 = document.getElementById('emailGreska');
+		mail.addEventListener('input',function(e){
+			var trenutno2 = e.target.value;
+			var provera2 = proverMaila.test(trenutno2);
+			if(!provera2) {
+				greska2.style.display = 'block'
+			}
+			else{
+				greska2.style.display = 'none'
+			}
+		}
+		)
 
 
+	
+//CountDown
+var endDate = new Date("Mar 7, 2023 12:00:00").getTime();
+		
+var timer = setInterval(function() {
+	
+	let now = new Date().getTime();
+	let t = endDate - now;
+	
+	if (t >= 0) {
+	
+		let days = Math.floor(t / (1000 * 60 * 60 * 24));
+		let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		let mins = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+		let secs = Math.floor((t % (1000 * 60)) / 1000);
+	
+		document.getElementById("timer-days").innerHTML = days +
+		"<span class='label'>d</span>";
+	
+		document.getElementById("timer-hours").innerHTML = ("0"+hours).slice(-2) +
+		"<span class='label'>h</span>";
+	
+		document.getElementById("timer-mins").innerHTML = ("0"+mins).slice(-2) +
+		"<span class='label'>m</span>";
+	
+		document.getElementById("timer-secs").innerHTML = ("0"+secs).slice(-2) +
+		"<span class='label'>s</span>";
+	
+	} else {
+
+		document.getElementById("timer").innerHTML = "The countdown is over!";
+	
+	}
+	
+}, 1000);
+//CountDown 1
+var endDate1 = new Date("Feb 13, 2023 12:00:00").getTime();
+		
+var timer = setInterval(function() {
+	
+	let now1 = new Date().getTime();
+	let t1 = endDate1 - now1;
+	
+	if (t1 >= 0) {
+	
+		let days = Math.floor(t1 / (1000 * 60 * 60 * 24));
+		let hours = Math.floor((t1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		let mins = Math.floor((t1 % (1000 * 60 * 60)) / (1000 * 60));
+		let secs = Math.floor((t1 % (1000 * 60)) / 1000);
+	
+		document.getElementById("timer-days1").innerHTML = days +
+		"<span class='label'>d</span>";
+	
+		document.getElementById("timer-hours1").innerHTML = ("0"+hours).slice(-2) +
+		"<span class='label'>h</span>";
+	
+		document.getElementById("timer-mins1").innerHTML = ("0"+mins).slice(-2) +
+		"<span class='label'>m</span>";
+	
+		document.getElementById("timer-secs1").innerHTML = ("0"+secs).slice(-2) +
+		"<span class='label'>s</span>";
+	
+	} else {
+
+		document.getElementById("timer").innerHTML = "The countdown is over!";
+	
+	}
+
+}, 1000);
+//CountDown 2
+var endDate2 = new Date("Mar 13, 2023 12:00:00").getTime();
+		
+var timer = setInterval(function() {
+	
+	let now2 = new Date().getTime();
+	let t2 = endDate2 - now2;
+	
+	if (t2 >= 0) {
+	
+		let days = Math.floor(t2 / (1000 * 60 * 60 * 24));
+		let hours = Math.floor((t2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		let mins = Math.floor((t2 % (1000 * 60 * 60)) / (1000 * 60));
+		let secs = Math.floor((t2 % (1000 * 60)) / 1000);
+	
+		document.getElementById("timer-days2").innerHTML = days +
+		"<span class='label'>d</span>";
+	
+		document.getElementById("timer-hours2").innerHTML = ("0"+hours).slice(-2) +
+		"<span class='label'>h</span>";
+	
+		document.getElementById("timer-mins2").innerHTML = ("0"+mins).slice(-2) +
+		"<span class='label'>m</span>";
+	
+		document.getElementById("timer-secs2").innerHTML = ("0"+secs).slice(-2) +
+		"<span class='label'>s</span>";
+	
+	} else {
+
+		document.getElementById("timer2").innerHTML = "The countdown is over!";
+	
+	}
+
+}, 1000);
+// Footer AutoWrite
+const footerIkone = new Array(
+	"icon-facebook",
+	"icon-twitter",
+	"icon-instagram",
+	"icon-file"
+	
+  );
+  const footerHref = new Array(
+	"https://www.facebook.com/nenad.maksic.3",
+	"https://twitter.com/login",
+	"https://www.instagram.com/",
+	"Dokumentacija.pdf"
+	
+  );
+ var footerIspis = "";
+  for (let i = 0; i < footerIkone.length; i++) {
+	footerIspis += `<li class="to-animate-2"><a href=${footerHref[i]} target="_blank"><i class=${footerIkone[i]}></i></a></li>`;
+  }
+  const navDiv = document.querySelector(".fh5co-social");
+  navDiv.innerHTML = footerIspis;
 	// Document on load.
 	$(function(){
 
