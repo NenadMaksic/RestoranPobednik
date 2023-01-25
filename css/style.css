@@ -827,7 +827,7 @@ p {
   top: 0;
   left: 0;
   width: 64px;
-  height: 45px;
+  height: 64px;
 }
 #fh5co-menus .fh5co-food-menu h2.fh5co-dishes-2:before {
   background: url(../images/Desert.png) no-repeat;
@@ -866,7 +866,7 @@ p {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
-  border-radius: 4px;
+  border-radius: 15px;
   margin-bottom: 0;
 }
 #fh5co-menus .fh5co-food-menu ul li .fh5co-food-desc > div {
@@ -1366,3 +1366,28 @@ p {
 }
 
 /*# sourceMappingURL=style.css.map */
+#imeGreska{
+  position: relative;
+  margin: auto;
+  color: rgb(255, 2, 2);
+  left: 20%;
+  display: none;
+}
+#emailGreska{
+  position: relative;
+  margin: auto;
+  color: rgb(255, 2, 2);
+  left: 20%;
+  display: none;
+}
+.bojaTimera .label{
+  color: #fb6e14;;
+}
+#slikaAutora {
+    border: 0;
+    height: 300px;
+    width: 250px;
+    border-radius: 20px;
+}
+}
+
